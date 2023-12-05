@@ -52,3 +52,15 @@ legend {
 fieldset {
     border: none;
 }
+
+.margin-top {
+    margin-top: 3rem;
+}
+
+.n-padding {
+    padding-top: 6rem;
+}
+
+.margin-l {
+    width: 50%;
+}
