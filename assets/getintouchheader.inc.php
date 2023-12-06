@@ -1,7 +1,7 @@
 <?php
     function nav_cookies(){ ?>
     <div class="nav-wrapper">
-      <a href="index.php" class="brand-logo a-height"><img src="../img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
+      <a href="../index.php" class="brand-logo a-height"><img src="../img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="../index.php" id="home">Home</a>
@@ -33,7 +33,7 @@
 <?php
     function nav_no_cookies(){ ?>
     <div class="nav-wrapper">
-      <a href="index.php" class="brand-logo a-height"><img src="../img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
+      <a href="../index.php" class="brand-logo a-height"><img src="../img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a href="../index.php" id="home">Home</a>

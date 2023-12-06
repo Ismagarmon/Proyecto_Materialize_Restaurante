@@ -72,6 +72,11 @@ fieldset {
 .main {
     padding-top: 5rem;
 }
+
 input {
+    color: white
+}
+
+textarea {
     color: white
 }

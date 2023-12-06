@@ -59,31 +59,42 @@ require '../assets/getintouchheader.inc.php';
       <form>
         <fieldset>
           <legend>Contact to me</legend>
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
               <input id="last_name" type="text" class="validate" placeholder="Name">
               <label for="last_name">First Name</label>
             </div>
-            <div class="input-field col s6">
+          </div>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
               <input id="last_name" type="text" class="validate" placeholder="Last two names">
               <label for="last_name">Last Name</label>
             </div>
-            <div class="input-field col s6">
+          </div>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
               <input id="last_name" type="text" class="validate" placeholder="Example: qwerty@gmail.com">
               <label for="last_name">Email</label>
             </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">phone</i>
+          </div>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
               <input id="icon_telephone" type="tel" class="validate">
               <label for="icon_telephone">Telephone</label>
             </div>
           </div>
-          <div class="row center margin-top">
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Textarea</label>
+            </div>
+          </div>
+          <div class="row flex-cc margin-top">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
           </div>
+
         </fieldset>
       </form>
     </div>
