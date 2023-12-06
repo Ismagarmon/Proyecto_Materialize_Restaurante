@@ -15,7 +15,7 @@ class PDF
         $dompdf = new Dompdf();
         try {
 
-            $html = '<h1 style="text-align: center">CineXperience</h1><p style="color: black;font-family: var(--secondaryfont);">Nombre de la peliucla: <strong></strong></p>';
+            $html = '<h1 style="text-align: center">Balsamiq Restaurant</h1><p style="color: black;font-family: var(--secondaryfont);">Nombre de la peliucla: <strong></strong></p>';
 
             $dompdf->loadHtml($html);
             $dompdf->setPaper('A4', 'portrait');

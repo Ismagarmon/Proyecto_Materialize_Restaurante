@@ -3,7 +3,7 @@
 session_cache_limiter('nocache,private');
 session_name('newuser');
 session_start();
-
+$db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +52,9 @@ session_start();
         <li>
           <a class="btn waves-effect waves-light" href="templates/signin.php">Sign In</a>
         </li>
+        <li>
+          <a class="btn waves-effect waves-light" href="templates/signup.php">Sign Up</a>
+        </li>
       </ul>
       <ul class="sidenav" id="nav-mobile">
         <li class="active"><a href="index.php" id="home">Home</a></li>
@@ -61,6 +64,7 @@ session_start();
         </li>
         <li><a href="templates/getintouch.php" id="contact">Get in touch</a></li>
         <li><a class="btn waves-effect waves-light" href="templates/signin.php">Sign In</a></li>
+        <li><a class="btn waves-effect waves-light" href="templates/signup.php">Sign Up</a></li>
       </ul>
       <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>

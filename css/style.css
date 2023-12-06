@@ -8,7 +8,7 @@ main {
     flex: 1 0 auto;
     background-image: url(../img/Food.png);
     background-repeat: no-repeat;
-    opacity: .7;
+    opacity: .8;
     
 }
 
@@ -67,4 +67,11 @@ fieldset {
 
 .margin-l {
     width: 50%;
+}
+
+.main {
+    padding-top: 5rem;
+}
+input {
+    color: white
 }

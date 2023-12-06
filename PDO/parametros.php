@@ -1,6 +1,6 @@
 <?php
 $servidor = 'localhost';
-$bd = 'cine';
-$usuario = 'root';
-$contrasenia = '1234toor';
+$bd = 'restaurante';
+$usuario = 'Ismael';
+$contrasenia = '1234ismael';
 ?>

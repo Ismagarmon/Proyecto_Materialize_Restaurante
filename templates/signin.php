@@ -4,6 +4,8 @@ session_cache_limiter('nocache,private');
 session_name('newuser');
 session_start();
 
+$db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +33,35 @@ session_start();
 
 <body>
   <nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="center hide-on-med-and-down flex-cc">
-        <li><a href="../index.php">Home</a></li>
+  <div class="nav-wrapper">
+      <a href="index.php" class="brand-logo a-height"><img src="img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active">
+          <a href="index.php" id="home">Home</a>
+        </li>
+        <li>
+          <a href="templates/about.php" id="about">About Us</a>
+        </li>
+        <li>
+          <a href="templates/makeorder.php" id="makeorder">Make an order</a>
+        </li>
+        <li>
+          <a href="templates/getintouch.php" id="contact">Get in touch</a>
+        </li>
+        <li>
+          <a class="btn waves-effect waves-light" href="signup.php">Sign Up</a>
+        </li>
+      </ul>
+      <ul class="sidenav" id="nav-mobile">
+        <li><a href="../index.php" id="home">Home</a></li>
+        <li><a href="about.php" id="about">About Us</a></li>
+        <li>
+          <a href="makeorder.php" id="makeorder">Make an order</a>
+        </li>
+        <li><a href="getintouch.php" id="contact">Get in touch</a></li>
         <li><a class="btn waves-effect waves-light" href="signup.php">Sign Up</a></li>
       </ul>
+      <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   <main>
@@ -44,7 +70,6 @@ session_start();
         <fieldset>
           <div class="row flex-cc">
             <div class="input-field margin-l">
-              <i class="material-icons prefix">account_circle</i>
               <input id="last_name" type="text" placeholder="Username" pattern="/^[A-Za-z\s]+$" title="The name must have mayus and minus">
               <label for="last_name">First Name</label>
             </div>
@@ -53,12 +78,6 @@ session_start();
             <div class="input-field margin-l">
               <input id="last_name" type="text" class="validate" placeholder="Password">
               <label for="last_name">Password</label>
-            </div>
-          </div>
-          <div class="row flex-cc">
-            <div class="input-field margin-l">
-              <input id="last_name" type="text" class="validate" placeholder="Password">
-              <label for="last_name">Telephone</label>
             </div>
           </div>
           <div class="row center margin-top">

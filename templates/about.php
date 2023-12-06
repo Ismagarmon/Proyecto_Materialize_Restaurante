@@ -3,7 +3,7 @@
 session_cache_limiter('nocache,private');
 session_name('newuser');
 session_start();
-
+$db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
 ?>
 
 <!DOCTYPE html>

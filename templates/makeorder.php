@@ -3,7 +3,7 @@
 session_cache_limiter('nocache,private');
 session_name('newuser');
 session_start();
-
+$db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
 ?>
 
 <!DOCTYPE html>
@@ -52,18 +52,18 @@ session_start();
             </li>
           </ul>
           <ul class="sidenav" id="nav-mobile">
-            <li><a href="index.php" id="home">Home</a></li>
-            <li><a href="templates/about.php" id="about">About Us</a></li>
+            <li><a href="../index.php" id="home">Home</a></li>
+            <li><a href="about.php" id="about">About Us</a></li>
             <li>
-              <a href="templates/makeorder.php" id="makeorder">Make an order</a>
+              <a href="makeorder.php" id="makeorder">Make an order</a>
             </li>
-            <li class="active"><a href="templates/getintouch.php" id="contact">Get in touch</a></li>
-            <li><a class="btn waves-effect waves-light" href="templates/signin.php">Sign In</a></li>
+            <li class="active"><a href="getintouch.php" id="contact">Get in touch</a></li>
+            <li><a class="btn waves-effect waves-light" href="signin.php">Sign In</a></li>
           </ul>
           <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <main id="logged">
+    <main>
 
     </main>
     <footer class="page-footer" id="footer">
