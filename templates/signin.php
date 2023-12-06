@@ -1,10 +1,28 @@
 <?php
-
+require '../PDO/parametros.php';
 session_cache_limiter('nocache,private');
 session_name('newuser');
 session_start();
-
 $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
+require '../assets/signinheader.inc.php';
+
+if (isset($_REQUEST['enter'])) {
+  $consulta = $db->prepare('SELECT * FROM USUARIOS WHERE Correo = :correo');
+  $password = $_REQUEST['password'];
+  $correo = $_REQUEST['Email'];
+  $consulta->bindParam(':correo', $correo);
+  $consulta->execute();
+  while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
+    $pw = $fila->Contraseña;
+    if ($pw == $password) {
+      setcookie('ID_USUARIO', $fila->ID_USUARIO, time() + 999999, '/', '', false, false);
+      echo '<script>alert("Correct data")</script>';
+      sleep(1);
+      header('Location: ../index.php', true, 301);
+      exit();
+    }
+  }
+}
 
 ?>
 
@@ -33,36 +51,9 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
 
 <body>
   <nav>
-  <div class="nav-wrapper">
-      <a href="index.php" class="brand-logo a-height"><img src="img/RM.png" alt="Logo" class="brand-logo" width="60rem" height="100%"></a>
-      <ul class="right hide-on-med-and-down">
-        <li class="active">
-          <a href="index.php" id="home">Home</a>
-        </li>
-        <li>
-          <a href="templates/about.php" id="about">About Us</a>
-        </li>
-        <li>
-          <a href="templates/makeorder.php" id="makeorder">Make an order</a>
-        </li>
-        <li>
-          <a href="templates/getintouch.php" id="contact">Get in touch</a>
-        </li>
-        <li>
-          <a class="btn waves-effect waves-light" href="signup.php">Sign Up</a>
-        </li>
-      </ul>
-      <ul class="sidenav" id="nav-mobile">
-        <li><a href="../index.php" id="home">Home</a></li>
-        <li><a href="about.php" id="about">About Us</a></li>
-        <li>
-          <a href="makeorder.php" id="makeorder">Make an order</a>
-        </li>
-        <li><a href="getintouch.php" id="contact">Get in touch</a></li>
-        <li><a class="btn waves-effect waves-light" href="signup.php">Sign Up</a></li>
-      </ul>
-      <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
+    <?php
+    nav_no_cookies();
+    ?>
   </nav>
   <main>
     <div class="form">
@@ -70,13 +61,13 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
         <fieldset>
           <div class="row flex-cc">
             <div class="input-field margin-l">
-              <input id="last_name" type="text" placeholder="Username" pattern="/^[A-Za-z\s]+$" title="The name must have mayus and minus">
-              <label for="last_name">First Name</label>
+              <input id="last_name" type="text" placeholder="Email" name="Email">
+              <label for="last_name">Email</label>
             </div>
           </div>
           <div class="row flex-cc">
             <div class="input-field margin-l">
-              <input id="last_name" type="text" class="validate" placeholder="Password">
+              <input id="last_name" type="password" class="validate" placeholder="Password" name="password">
               <label for="last_name">Password</label>
             </div>
           </div>
@@ -85,6 +76,7 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
               <i class="material-icons right">send</i>
             </button>
           </div>
+          <input hidden name="enter">
         </fieldset>
       </form>
     </div>
@@ -94,8 +86,7 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Balsamiq Restaurant</h5>
-          <p class="grey-text text-lighten-4">In this Restaurant you're going to be able to make your order, choosing the meat you want, including vegan food, but there
-            isn't a custom order</p>
+          <p class="grey-text text-lighten-4">In this Restaurant you're going to be able to make your order, choosing the meat you want, including vegan food, but there isn't a custom order</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">These sites are where I buy the ingredients</h5>

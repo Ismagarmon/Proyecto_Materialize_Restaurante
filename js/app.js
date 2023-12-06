@@ -1,22 +1,16 @@
 import { nav_cookies, nav_no_cookies } from './components.js'
 
 window.onload = () => {
-    comprobaciones()
+    btn()
 }
 
- const comprobaciones = () => {
-    let arraycookies = document.cookie.split(';')
-
-    let main = document.getElementById('logged')
-
-
-    arraycookies.forEach(cookie => {
-        console.log(cookie)
+const btn = () => {
+    let btn = document.getElementById('logout')
+    btn.addEventListener('click', () => {
+        destroycookie('ID_USUARIO')
     })
- }
+}
 
-function createcookie(){
-    let cookie_date = new Date()
-    cookie_date.setTime(cookie_date.getTime() + 365 * 24 * 60 * 60 * 10)
-    // let nombrecookie = 
+function destroycookie(nombre) {
+    document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }

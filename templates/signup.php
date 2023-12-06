@@ -18,6 +18,9 @@ if (isset($_REQUEST['createuser'])) {
   $consulta->bindParam(':contrasena', $password);
   $consulta->execute();
   echo '<script>alert("Te has registrado correctamente")</script>';
+  sleep(1);
+  header('Location: ../index.php', true, 301);
+  exit();
 }
 
 ?>
@@ -40,18 +43,13 @@ if (isset($_REQUEST['createuser'])) {
   <script type="text/javascript" src="../js/materialize.js"></script>
   <script type="text/javascript" src="../js/init.js"></script>
 
-  <link rel="icon" type="image/png" href="img/RM.png" />
+  <link rel="icon" type="image/png" href="../img/RM.png" />
 </head>
 
 <body>
   <nav>
     <?php
-
-    if (isset($_COOKIE['ID_USUARIO']))
-      nav_cookies();
-    else
       nav_no_cookies();
-
     ?>
   </nav>
   <main class="main">
