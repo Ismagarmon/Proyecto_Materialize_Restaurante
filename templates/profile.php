@@ -41,13 +41,21 @@ session_start();
                 <i class="large material-icons">settings</i>
             </a>
             <ul>
-                <li><a class="btn-floating red"><i class="medium material-icons">home</i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="medium material-icons">format_quote</i></a></li>
-                <li><a class="btn-floating green"><i class="medium material-icons">publish</i></a></li>
-                <li><a class="btn-floating blue"><i class="medium material-icons">attach_file</i></a></li>
+                <li><a href="../index.php" class="btn-floating red"><i class="medium material-icons">home</i></a></li>
+                <li><a href="getintouch.php" class="btn-floating yellow darken-1"><i class="medium material-icons">contact_mail</i></a></li>
+                <li id="logout"><a class="btn-floating green"><i class="medium material-icons">exit_to_app</i></a></li>
+                <li><a href="makeorder.php" class="btn-floating blue"><i class="medium material-icons">local_dining</i></a></li>
             </ul>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                hoverEnabled: false
+            })
+        })
+    </script>
 </body>
 
 </html>
