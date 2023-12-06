@@ -43,7 +43,7 @@ require 'assets/indexheader.inc.php';
   </nav>
 
   <main>
-
+  
   </main>
   <footer class="page-footer" id="footer">
     <div class="container">

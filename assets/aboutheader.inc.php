@@ -16,6 +16,9 @@
           <a href="getintouch.php" id="contact">Get in touch</a>
         </li>
         <li>
+          <a href="profile.php">Profile</a>
+        </li>
+        <li>
             <a class="btn waves-effect waves-light" id="logout">Log out</a>
         </li>
       </ul>
@@ -24,6 +27,9 @@
         <li class="active"><a href="about.php">About Us</a></li>
         <li><a href="makeorder.php">Make an order</a></li>
         <li><a href="getintouch.php">Get in touch</a></li>
+        <li>
+          <a href="profile.php">Profile</a>
+        </li>
         <li><a class="btn waves-effect waves-light" id="logout">Log out</a></li>
       </ul>
       <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
