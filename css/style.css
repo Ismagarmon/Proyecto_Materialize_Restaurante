@@ -6,6 +6,10 @@ body {
 
 main {
     flex: 1 0 auto;
+    background-image: url(../img/Food.png);
+    background-repeat: no-repeat;
+    opacity: .7;
+    
 }
 
 .a-height {
@@ -51,4 +55,16 @@ legend {
 
 fieldset {
     border: none;
+}
+
+.margin-top {
+    margin-top: 3rem;
+}
+
+.n-padding {
+    padding-top: 6rem;
+}
+
+.margin-l {
+    width: 50%;
 }

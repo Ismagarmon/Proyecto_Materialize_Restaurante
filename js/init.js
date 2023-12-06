@@ -1,9 +1,9 @@
 (function($){
     $(function(){
   
-      $('.sidenav').sidenav();
-      $('.parallax').parallax();
+      $('.parallax').parallax()
+      $('.sidenav').sidenav()
   
-    }); // end of document ready
-  })(jQuery); // end of jQuery name space
+    }) // end of document ready
+  })(jQuery) // end of jQuery name space
   
