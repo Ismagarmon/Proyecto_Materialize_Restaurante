@@ -80,3 +80,34 @@ input {
 textarea {
     color: white
 }
+
+.firstplate {
+    width: 70%;
+    margin: 5rem auto;
+}
+
+.one {
+    text-align: center;
+}
+
+.div.card::after {
+    margin-left: 2rem;
+}
+
+.w-3 {
+    width: 30%;
+}
+
+.m-button {
+    margin-bottom: 2rem;
+}
+
+.secondplate {
+    width: 70%;
+    margin: 5rem auto;
+}
+
+.dessert {
+    width: 70%;
+    margin: 5rem auto;
+}
