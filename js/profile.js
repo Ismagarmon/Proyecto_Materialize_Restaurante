@@ -14,10 +14,10 @@ const changemp = () => {
 
     l1.addEventListener('click', () => {
         loader.classList.remove('none')
+        div_ean.classList.add('none')
+        div_pd.classList.remove('none')
 
-        setInterval(() => {
-            div_pd.classList.remove('none')
-            div_ean.classList.add('none')
+        setTimeout(() => {
             loader.classList.add('none')
         }, 1500)
     })
@@ -25,7 +25,7 @@ const changemp = () => {
     l2.addEventListener('click', () => {
         loader.classList.remove('none')
 
-        setInterval(() => {
+        setTimeout(() => {
             div_ean.classList.remove('none')
             div_pd.classList.add('none')
             loader.classList.add('none')

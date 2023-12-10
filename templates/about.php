@@ -45,18 +45,18 @@ require '../assets/aboutheader.inc.php';
   <main>
     <div class="aboutus">
       <h1>Discover Our Culinary Story</h1>
-      <p>Welcome to Balsamiq Restaurant, where passion for food meets a commitment to culinary excellence. Nestled in the heart of Spain, our restaurant is more than just a dining destination; 
+      <p id="fontsize">Welcome to Balsamiq Restaurant, where passion for food meets a commitment to culinary excellence. Nestled in the heart of Spain, our restaurant is more than just a dining destination; 
         it's a celebration of flavors, a symphony of tastes that reflects our dedication to creating unforgettable culinary experiences.
       </p>
-      <p>At Balsamiq Restaurant, we believe that dining is an art form, and our kitchen is the canvas where our talented chefs craft masterpieces. 
+      <p id="fontsize">At Balsamiq Restaurant, we believe that dining is an art form, and our kitchen is the canvas where our talented chefs craft masterpieces. 
         Our culinary journey is inspired by a rich tapestry of global influences, 
         blending traditional techniques with innovative twists to create dishes that are not just meals but moments to be savored.
       </p>
-      <p>Beyond the exceptional food, our restaurant is a haven of warm hospitality and inviting ambiance. 
+      <p id="fontsize">Beyond the exceptional food, our restaurant is a haven of warm hospitality and inviting ambiance. 
         From the moment you step through our doors, you're welcomed into a space where every detail is designed to enhance your dining experience. 
         Whether you're here for a romantic evening, a family celebration, or a casual gathering with friends, we strive to make every visit special.
       </p>
-      <p>Our commitment to quality extends beyond the plate. 
+      <p id="fontsize">Our commitment to quality extends beyond the plate. 
         We source the finest ingredients, prioritizing freshness and sustainability. 
         The result is a menu that showcases the best of seasonal produce, premium meats, and thoughtfully curated flavors. 
         Each dish tells a story, a narrative of our dedication to providing a culinary journey that delights the senses.
@@ -64,7 +64,7 @@ require '../assets/aboutheader.inc.php';
       
     </div>
     <div class="comments">
-      <p>These are four of the comments that the people have add to our web blog:</p>
+      <p id="fontsize">These are four of the comments that the people have add to our web blog:</p>
       <div class="collectionpersonal">
         <ul class="collection">
           <li class="collection-item avatar" style="margin-bottom: 5px;">
@@ -89,7 +89,7 @@ require '../assets/aboutheader.inc.php';
             </p>
           </li>
           <li class="collection-item avatar">
-            <img src="https://inmofotos.es/wp-content/uploads/2021/10/imagen-1_Mesa-de-trabajo-1.jpg" alt="" class="circle">
+            <img src="https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg" alt="" class="circle">
             <span style="margin-bottom: 5px;" class="title">Seafood Symphony: A Coastal Feast at Tides & Tastes</span>
             <p style="color: black">Tides & Tastes invites you to a coastal feast where the symphony of fresh seafood takes center stage. <br>
             With a menu curated to celebrate the bounty of the sea, every dish is a flavorful ode to oceanic indulgence.
