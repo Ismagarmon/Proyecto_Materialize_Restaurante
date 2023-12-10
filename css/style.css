@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'RubikR';
+    src: url('../fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+}
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'RubikR';
 }
 
 main {
@@ -254,7 +260,7 @@ main#home h4 {
 
 @media (min-width: 1300px) {
     .w-3 {
-        width: 40%;
+        width: 30%;
     }
 }
 
@@ -333,4 +339,27 @@ p#emailmessage {
     overflow: hidden;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+.corder {
+    width: 90%;
+    margin: 0rem auto;
+    color: white;
+    margin-top: 2rem;
+}
+
+input[value="Complete"]:active {
+    transform: translateY(4px) !important;
+}
+
+.corder p {
+    margin-top: 2rem;
+}
+
+.n-height {
+    overflow-y: visible;
+}
+
+input#completeorder {
+    padding-top: 10px;
 }
