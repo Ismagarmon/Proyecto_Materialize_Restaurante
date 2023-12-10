@@ -135,7 +135,7 @@ require '../assets/getintouchheader.inc.php';
             </div>
           </div>
           <div class="row flex-cc">
-            <label id="rangech">Select a number of how was your first look in the page: </label>
+            <label id="rangech">Rate your first look in the page: </label>
             <p class="range-field">
               <input type="range" id="test5" min="0" max="100" />
             </p>

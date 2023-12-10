@@ -154,10 +154,10 @@ if (isset($_REQUEST['id_email'])) {
                             <input hidden value="' . $id_email . '" name="id_email">
                             <input type="submit" value="Check">
                             </form>';
-                            $checked = '';
+                            $checked = ' <span class="new badge"></span> ';
                         } else {
                             $form = '';
-                            $checked = ' (Check)';
+                            $checked = '';
                         }
                         $message_styled = '<p id="emailmessage">' . $message . '</p>';
                         echo '
