@@ -357,3 +357,24 @@ input[value="Complete"]:active {
 input#completeorder {
     padding-top: 10px;
 }
+
+#checkch {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    display: block;
+}
+
+#switchch {
+    margin-right: 1rem;
+    font-size: 1.2rem
+}
+
+#rangech {
+    margin-right: 1rem;
+    font-size: 1.2rem
+}
+
+.chips input {
+    color: white;
+    background-color: white;
+}

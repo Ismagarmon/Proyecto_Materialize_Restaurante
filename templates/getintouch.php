@@ -86,8 +86,59 @@ require '../assets/getintouchheader.inc.php';
           <div class="row flex-cc">
             <div class="input-field margin-l">
               <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Textarea</label>
+              <label for="textarea1">Write your opinion about the page</label>
             </div>
+          </div>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
+              <label for="date">If you have one issue, just pick the date of the issue</label>
+              <input type="text" class="datepicker" id="date">
+            </div>
+          </div>
+          <div class="row flex-cc">
+            <div class="chips chips-placeholder"></div>
+          </div>
+          <div class="row flex-cc">
+            <div class="input-field margin-l">
+              <select>
+                <option value="1" selected>Valladolid</option>
+                <option value="2">Ciudad Real</option>
+                <option value="3">Albacete</option>
+              </select>
+              <label>Select your CCAA</label>
+            </div>
+          </div>
+          <div class="row flex-cc">
+            <label id="checkch">Have you gone here at least one time?</label>
+            <br>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>Yes</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>No</span>
+              </label>
+            </p>
+          </div>
+          <div class="row flex-cc">
+            <div class="switch">
+              <label style="font-size: 1.2rem">
+                I want emails and recomendations
+                <input type="checkbox">
+                <span class="lever"></span>
+                I don't want emails and recomendations
+              </label>
+            </div>
+          </div>
+          <div class="row flex-cc">
+            <label id="rangech">Select a number of how was your first look in the page: </label>
+            <p class="range-field">
+              <input type="range" id="test5" min="0" max="100" />
+            </p>
           </div>
           <div class="row flex-cc margin-top">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
