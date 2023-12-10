@@ -43,36 +43,50 @@ require '../assets/aboutheader.inc.php';
     ?>
   </nav>
   <main>
-    <div class="aboutur">
-
+    <div class="aboutus">
+      <h1>Discover Our Culinary Story</h1>
+      <p>Welcome to Balsamiq Restaurant, where passion for food meets a commitment to culinary excellence. Nestled in the heart of Spain, our restaurant is more than just a dining destination; 
+        it's a celebration of flavors, a symphony of tastes that reflects our dedication to creating unforgettable culinary experiences.
+      </p>
+      <p>At Balsamiq Restaurant, we believe that dining is an art form, and our kitchen is the canvas where our talented chefs craft masterpieces. 
+        Our culinary journey is inspired by a rich tapestry of global influences, 
+        blending traditional techniques with innovative twists to create dishes that are not just meals but moments to be savored.
+      </p>
+      <p>Beyond the exceptional food, our restaurant is a haven of warm hospitality and inviting ambiance. 
+        From the moment you step through our doors, you're welcomed into a space where every detail is designed to enhance your dining experience. 
+        Whether you're here for a romantic evening, a family celebration, or a casual gathering with friends, we strive to make every visit special.
+      </p>
+      <p>Our commitment to quality extends beyond the plate. 
+        We source the finest ingredients, prioritizing freshness and sustainability. 
+        The result is a menu that showcases the best of seasonal produce, premium meats, and thoughtfully curated flavors. 
+        Each dish tells a story, a narrative of our dedication to providing a culinary journey that delights the senses.
+      </p>
+      
     </div>
     <div class="comments">
-      <p>These are four of the comments that the people have add to our web blog</p>
+      <p>These are four of the comments that the people have add to our web blog:</p>
       <div class="collectionpersonal">
         <ul class="collection">
-          <li class="collection-item avatar">
+          <li class="collection-item avatar" style="margin-bottom: 5px;">
             <img src="https://www.metlife.es/content/dam/metlifecom/es/img/blog/5-habitos-personas-felices.jpg" alt="" class="circle">
             <span style="margin-bottom: 5px;" class="title">Savoring Elegance at Bistro Bliss</span>
             <p style="color: black">Step into Bistro Bliss for a gastronomic journey that transcends ordinary dining. <br>
               The menu, a fusion of innovation and tradition, invites guests to savor every moment in a setting of refined elegance.
             </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
-          <li class="collection-item avatar">
+          <li class="collection-item avatar" style="margin-bottom: 5px;">
             <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="circle">
             <span style="margin-bottom: 5px;" class="title">Flavors of Fusion Delight at Spice Horizon</span>
             <p style="color: black">Embark on a culinary adventure at Spice Horizon, where the diverse tapestry of flavors tells a tale of culinary creativity.  <br>
             This restaurant seamlessly fuses global influences, promising a taste journey that captivates the senses.
             </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
-          <li class="collection-item avatar">
+          <li class="collection-item avatar" style="margin-bottom: 5px;">
             <img src="https://images.pexels.com/photos/4065129/pexels-photo-4065129.jpeg?cs=srgb&dl=pexels-cottonbro-studio-4065129.jpg&fm=jpg" alt="" class="circle">
             <span style="margin-bottom: 5px;" class="title">Cozy Comforts and Culinary Wonders at Hearthside Bites</span>
             <p style="color: black">Hearthside Bites is not just a restaurant; it's a warm embrace of comfort and culinary wonders. <br>
             The menu, a celebration of familiar flavors with a modern twist, promises to turn every visit into a delightful experience.
             </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
           <li class="collection-item avatar">
             <img src="https://inmofotos.es/wp-content/uploads/2021/10/imagen-1_Mesa-de-trabajo-1.jpg" alt="" class="circle">
@@ -80,7 +94,6 @@ require '../assets/aboutheader.inc.php';
             <p style="color: black">Tides & Tastes invites you to a coastal feast where the symphony of fresh seafood takes center stage. <br>
             With a menu curated to celebrate the bounty of the sea, every dish is a flavorful ode to oceanic indulgence.
             </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
         </ul>
       </div>

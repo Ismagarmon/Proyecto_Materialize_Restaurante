@@ -256,7 +256,7 @@ main#home h2 {
 .comments {
     overflow-y: auto;
     width: 90%;
-    padding: 4rem;
+    padding: 2rem;
     text-align: center;
     margin: 0rem auto;
 }
@@ -269,6 +269,29 @@ main#home h2 {
 }
 
 .comments .collectionpersonal {
-    width: 50%;
+    width: 70%;
     margin: 0rem auto;
+}
+
+.aboutus {
+    width: 90%;
+    color: white;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.aboutus h1 {
+    margin: 0rem auto;
+}
+
+.aboutus p {
+    width: 60%;
+    margin: 2rem auto;
+}
+
+@media (max-width: 600px) {
+    .comments .collectionpersonal {
+        width: 100%;
+        margin: 0rem auto;
+    }
 }
