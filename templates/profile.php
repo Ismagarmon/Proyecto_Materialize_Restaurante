@@ -5,18 +5,6 @@ session_name('newuser');
 session_start();
 $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasenia);
 
-$consulta = $db->prepare('SELECT * FROM USERS WHERE Email = :correo');
-$email = $_COOKIE['Correo'];
-$consulta->bindParam(':correo', $email);
-$consulta->execute();
-while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-    $name = $fila->Name;
-    $surnames = $fila->Surnames;
-    $email = $_COOKIE['Correo'];
-    $balance = $fila->Balance;
-}
-
-
 if (isset($_REQUEST['insertmoney'])) {
 
     $nuevosaldoaactualizado = 0;
@@ -37,14 +25,14 @@ if (isset($_REQUEST['insertmoney'])) {
     sleep(1);
 }
 
-if (isset($_REQUEST['id_email'])){
+if (isset($_REQUEST['id_email'])) {
 
     $id_emailupdate = $_REQUEST['id_email'];
 
-    $actualizaremail = $db->prepare("UPDATE EMAILS SET Email_Status = 1 WHERE ID_EMAIL = :ide");
+    $actualizaremail = $db->prepare("UPDATE EMAILS SET Email_Status = 'No' WHERE ID_EMAIL = :ide");
     $actualizaremail->bindParam(':ide', $id_emailupdate);
     $actualizaremail->execute();
-    echo "<script>alert('Balance updated correctly')</script>";
+    echo "<script>alert('Email chequecked')</script>";
 }
 ?>
 
@@ -74,15 +62,23 @@ if (isset($_REQUEST['id_email'])){
 </head>
 
 <body>
-
-
-    <main id="absolute">
-        <div class="nav">
-            <ul>
-                <li id="pd">Personal Data</li>
-                <li id="ean">Emails and notifications</li>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="pd"><a>Personal Data</a></li>
+                <li id="ean"><a>Emails and notifications</a></li>
             </ul>
+            <ul class="sidenav" id="nav-mobile">
+                <li id="pd"><a>Personal Data</a></li>
+                <li id="ean"><a>Emails and notifications</a></li>
+            </ul>
+            <a href="#!" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
+    </nav>
+
+
+    <main>
+
         <div class="loader flex-cc none" id="loader">
             <div class="preloader-wrapper active">
                 <div class="spinner-layer spinner-red-only">
@@ -116,53 +112,63 @@ if (isset($_REQUEST['id_email'])){
             <p>Surnames: <?php echo $surnames ?></p>
             <p>Email: <?php echo $email ?></p>
             <p>Balance: <?php echo $balance ?>€</p>
-            <form method="post" action="profile.php">
-                <input hidden name="insertmoney">
-                <input id="money" name="money" type="text" pattern="[\d+]{1,5}" title="Only add numbers, max 5" placeholder="Introduce the quantity">
-                <input type="submit" value="Recharge" id="recharge" hidden>
-            </form>
+            <div class="profiform">
+                <form method="post" action="profile.php">
+                    <input hidden name="insertmoney">
+                    <div class="colocation">
+                        <input id="money" name="money" type="text" pattern="[\d+]{1,5}" title="Only add numbers, max 5" placeholder="Introduce the quantity">
+                    </div>
+                    <br>
+                    <div class="div-charge">
+                        <input type="submit" value="Recharge" id="recharge" hidden>
+                    </div>
+                </form>
+            </div>
+
         </div>
         <div class="ean none" id="divean">
             <div class="emails">
 
-                <p style="text-align: center; color: white">Tienes estos correos sin ver: 
-                <?php 
-                $check = $db -> prepare('SELECT COUNT(*) AS Total FROM EMAILS WHERE Email_Status = false AND ID_USER = :idUser');
-                $check->bindParam(':idUser', $_COOKIE['ID_USUARIO']);
-                $check->execute();
-                while ($fila = $check->fetch(PDO::FETCH_OBJ)) {
-                    $number = $fila -> Total;
-                    echo $number;
-                }
-                ?></p>
+                <p style="text-align: center; color: white">Tienes estos correos sin ver:
+                    <?php
+                    $check = $db->prepare('SELECT COUNT(*) AS Total FROM EMAILS WHERE Email_Status = "Si" AND ID_USER = :idUser');
+                    $check->bindParam(':idUser', $_COOKIE['ID_USUARIO']);
+                    $check->execute();
+                    while ($fila = $check->fetch(PDO::FETCH_OBJ)) {
+                        $number = $fila->Total;
+                        echo $number;
+                    }
+                    ?></p>
                 <ul class="collapsible">
                     <?php
                     $emails = $db->prepare('SELECT * FROM EMAILS WHERE ID_USER = :idUser');
                     $emails->bindParam(':idUser', $_COOKIE['ID_USUARIO']);
                     $emails->execute();
                     while ($fila = $emails->fetch(PDO::FETCH_OBJ)) {
-                        $id_email = $fila -> ID_EMAIL;
-                        $nameuser = $fila -> Origin_User;
-                        $affair = $fila -> Affair;
-                        $message = $fila -> Message;
-                        if($fila -> Email_Status == 0){
+                        $id_email = $fila->ID_EMAIL;
+                        $nameuser = $fila->Origin_User;
+                        $affair = $fila->Affair;
+                        $message = $fila->Message;
+                        if ($fila->Email_Status == 'Si') {
                             $form = '<form method="post" action="profile.php">
-                            <input hidden vale="'.$id_email.'" name="id_email">
+                            <input hidden value="' . $id_email . '" name="id_email">
                             <input type="submit" value="Check">
                             </form>';
-                        }else {
+                            $checked = '';
+                        } else {
                             $form = '';
+                            $checked = ' (Check)';
                         }
-                        $message_styled = '<p id="emailmessage">'.$message.'</p>';
+                        $message_styled = '<p id="emailmessage">' . $message . '</p>';
                         echo '
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">account_circle</i>From: '.$nameuser.'</div>
+                            <div class="collapsible-header"><i class="material-icons">account_circle</i>From: ' . $nameuser . '' . $checked . '</div>
                             <div class="collapsible-body"><span style="color: white">
-                            Subject: '.$affair.'<br><br>
+                            Subject: ' . $affair . '<br><br>
                             Message: <br><br>
-                            '.$message_styled.'
+                            ' . $message_styled . '
                             <br><br>
-                            '.$form.'
+                            ' . $form . '
                             </span></div>
                         </li>
                         ';
@@ -186,6 +192,30 @@ if (isset($_REQUEST['id_email'])){
             </ul>
         </div>
     </main>
+
+    <footer class="page-footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Balsamiq Restaurant</h5>
+                    <p class="grey-text text-lighten-4">In this Restaurant you're going to be able to make your order, choosing the meat you want, including vegan food, but there isn't a custom order</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">These sites are where I buy the ingredients</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://iruki.es/tienda-online/" target="_blank">Meat used</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://verduras.consumer.es/" target="_blank">Vegatables used</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright flex-cc">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.fixed-action-btn');

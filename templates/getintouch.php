@@ -26,7 +26,7 @@ require '../assets/getintouchheader.inc.php';
 
   <link rel="icon" type="image/png" href="../img/RM.png" />
 
-  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/getit.js"></script>
 </head>
 
 <body>

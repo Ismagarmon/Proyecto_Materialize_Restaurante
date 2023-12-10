@@ -42,8 +42,7 @@ const logout = () => {
     logout.addEventListener('click', () => {
         eliminarCookie('ID_USUARIO')
         eliminarCookie('Correo')
-        window.location.assign('index.php')
-        window.location.reload()
+        window.location.assign('../index.php')
     })
 }
 

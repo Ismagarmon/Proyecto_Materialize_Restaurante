@@ -28,7 +28,7 @@ require '../assets/aboutheader.inc.php';
 
   <link rel="icon" type="image/png" href="../img/RM.png" />
 
-  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/about.js"></script>
 
 </head>
 
