@@ -33,8 +33,8 @@ require 'assets/indexheader.inc.php';
 
 <body>
   <nav>
-    <?php 
-    if(isset($_COOKIE['ID_USUARIO']))
+    <?php
+    if (isset($_COOKIE['ID_USUARIO']))
       nav_cookies();
     else
       nav_no_cookies()
@@ -42,8 +42,59 @@ require 'assets/indexheader.inc.php';
     ?>
   </nav>
 
-  <main>
-  
+  <main id="home">
+    <h1>We have created our menus with the best selection of the ingredients of our country.</h1>
+    <h2>Here you have some pictures: </h2>
+    <div class="carousel">
+      <a class="carousel-item" href="#one!"><img src="https://media.istockphoto.com/id/1165399909/es/foto/deliciosa-comida-en-un-plato-negro-vista-superior-espacio-de-copia.jpg?s=612x612&w=0&k=20&c=WVPqUu2friqxwlr385Ax-QQ_IvylhR_5wl46P5jQbb4="></a>
+      <a class="carousel-item" href="#two!"><img src="https://www.turiweb.pe/wp-content/uploads/2020/01/restaurantes-platos-070120-1.jpg"></a>
+      <a class="carousel-item" href="#three!"><img src="https://www.laparcelacr.com/wp-content/uploads/2014/11/platos-fuertes-menu.jpg"></a>
+      <a class="carousel-item" href="#four!"><img src="https://www.huariques.com/wp-content/uploads/2010/03/lomo_saltado-1.jpg"></a>
+      <a class="carousel-item" href="#five!"><img src="https://viajes.chavetas.es/wp-content/uploads/albums/hongkong11/comerenmacao02.jpg"></a>
+    </div>
+    <div class="information">
+      <h5>
+        Here we have some information about the main ingredients we use and the information about our suppliers:
+      </h5>
+      <ul class="collapsible popout">
+        <li>
+          <div id="divinfo" class="collapsible-header"><i class="material-icons">place</i>Fresh Cuts Inc</div>
+          <div class="collapsible-body">
+            <span>
+              <strong>Supplier Name:</strong> Fresh Cuts Inc.<br>
+              <strong>Location:</strong> Farmington, USA<br>
+              <strong>Specialization:</strong> Premium cuts of beef, pork, and chicken.<br>
+              <strong>Quality:</strong> Known for high-quality, organic meats.<br>
+              <strong>Contact:</strong> info@freshcuts.com
+            </span>
+          </div>
+        </li>
+        <li>
+          <div id="divinfo" class="collapsible-header"><i class="material-icons">place</i>Global Meats Ltd</div>
+          <div class="collapsible-body">
+            <span>
+              <strong>Supplier Name:</strong> Global Meats Ltd.<br>
+              <strong>Location:</strong> Sydney, Australia<br>
+              <strong>Specialization:</strong> Diverse range of meats, including exotic options.<br>
+              <strong>Quality:</strong> Emphasizes sustainable and ethically sourced products.<br>
+              <strong>Contact:</strong> sales@globalmeats.com.au
+            </span>
+          </div>
+        </li>
+        <li>
+          <div id="divinfo" class="collapsible-header"><i class="material-icons">whatshot</i>Balsamiq Restaurant</div>
+          <div class="collapsible-body">
+            <span>In the heart of the bustling city, a quaint cafe awaits, 
+              offering a haven of warmth and aroma. The barista crafts each cup with precision, 
+              creating a symphony of flavors. Patrons savor the moments, 
+              indulging in the simple joy of a perfect brew.
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
   </main>
   <footer class="page-footer" id="footer">
     <div class="container">

@@ -28,7 +28,7 @@ require '../assets/makeanorder.inc.php';
 
   <link rel="icon" type="image/png" href="../img/RM.png" />
 
-  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/makeorder.js"></script>
 
 </head>
 
@@ -125,7 +125,7 @@ require '../assets/makeanorder.inc.php';
         <div class="row flex-cc">
           <div class="card s4 w-3">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="https://www.guiarepsol.com/content/dam/repsol-guia/contenidos-imagenes/comer/nuestros-favoritos/restaurante-casa-pepe-juderia-cordoba/gr-cms-media-featured_images-none-1eee71eb-1540-4641-9c9a-6bd1cf267150-01-guia-repsol-casa-pepe-cordoba-22-de-enero-de-2022-177.jpg.transform/rp-rendition-md/image.jpg">
+              <img class="activator" src="https://www.turiweb.pe/wp-content/uploads/2020/01/restaurantes-platos-070120-1.jpg">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Beef Stir-Fry $14.99<i class="material-icons right">more_vert</i></span>

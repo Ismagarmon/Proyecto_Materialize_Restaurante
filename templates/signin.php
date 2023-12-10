@@ -7,15 +7,16 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
 require '../assets/signinheader.inc.php';
 
 if (isset($_REQUEST['enter'])) {
-  $consulta = $db->prepare('SELECT * FROM USUARIOS WHERE Correo = :correo');
+  $consulta = $db->prepare('SELECT * FROM USERS WHERE Email = :correo');
   $password = $_REQUEST['password'];
   $correo = $_REQUEST['Email'];
   $consulta->bindParam(':correo', $correo);
   $consulta->execute();
   while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-    $pw = $fila->Contraseña;
+    $pw = $fila->Password;
     if ($pw == $password) {
-      setcookie('ID_USUARIO', $fila->ID_USUARIO, time() + 999999, '/', '', false, false);
+      setcookie('ID_USUARIO', $fila->ID_USER, time() + 999999, '/', '', false, false);
+      setcookie('Correo', $correo, time() + 999999, '/', '', false, false);
       echo '<script>alert("Correct data")</script>';
       sleep(1);
       header('Location: ../index.php', true, 301);

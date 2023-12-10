@@ -7,7 +7,7 @@ $db = new PDO('mysql:host=' . $servidor . ';dbname=' . $bd, $usuario, $contrasen
 require '../assets/signupheader.inc.php';
 
 if (isset($_REQUEST['createuser'])) {
-  $consulta = $db->prepare('INSERT INTO Usuarios (Nombre,Apellidos,Correo,Contraseña) VALUES (:nombre,:apellido,:correo,:contrasena)');
+  $consulta = $db->prepare('INSERT INTO USERS (Name,Surnames,Email,Password) VALUES (:nombre,:apellido,:correo,:contrasena)');
   $password = $_REQUEST['password'];
   $correo = $_REQUEST['email'];
   $nombre = $_REQUEST['name'];
@@ -17,7 +17,7 @@ if (isset($_REQUEST['createuser'])) {
   $consulta->bindParam(':apellido', $apellido);
   $consulta->bindParam(':contrasena', $password);
   $consulta->execute();
-  echo '<script>alert("Te has registrado correctamente")</script>';
+  echo '<script>alert("Correctly Register")</script>';
   sleep(1);
   header('Location: ../index.php', true, 301);
   exit();

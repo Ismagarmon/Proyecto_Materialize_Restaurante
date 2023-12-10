@@ -43,7 +43,48 @@ require '../assets/aboutheader.inc.php';
     ?>
   </nav>
   <main>
+    <div class="aboutur">
 
+    </div>
+    <div class="comments">
+      <p>These are four of the comments that the people have add to our web blog</p>
+      <div class="collectionpersonal">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="https://www.metlife.es/content/dam/metlifecom/es/img/blog/5-habitos-personas-felices.jpg" alt="" class="circle">
+            <span style="margin-bottom: 5px;" class="title">Savoring Elegance at Bistro Bliss</span>
+            <p style="color: black">Step into Bistro Bliss for a gastronomic journey that transcends ordinary dining. <br>
+              The menu, a fusion of innovation and tradition, invites guests to savor every moment in a setting of refined elegance.
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="circle">
+            <span style="margin-bottom: 5px;" class="title">Flavors of Fusion Delight at Spice Horizon</span>
+            <p style="color: black">Embark on a culinary adventure at Spice Horizon, where the diverse tapestry of flavors tells a tale of culinary creativity.  <br>
+            This restaurant seamlessly fuses global influences, promising a taste journey that captivates the senses.
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <img src="https://images.pexels.com/photos/4065129/pexels-photo-4065129.jpeg?cs=srgb&dl=pexels-cottonbro-studio-4065129.jpg&fm=jpg" alt="" class="circle">
+            <span style="margin-bottom: 5px;" class="title">Cozy Comforts and Culinary Wonders at Hearthside Bites</span>
+            <p style="color: black">Hearthside Bites is not just a restaurant; it's a warm embrace of comfort and culinary wonders. <br>
+            The menu, a celebration of familiar flavors with a modern twist, promises to turn every visit into a delightful experience.
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+          <li class="collection-item avatar">
+            <img src="https://inmofotos.es/wp-content/uploads/2021/10/imagen-1_Mesa-de-trabajo-1.jpg" alt="" class="circle">
+            <span style="margin-bottom: 5px;" class="title">Seafood Symphony: A Coastal Feast at Tides & Tastes</span>
+            <p style="color: black">Tides & Tastes invites you to a coastal feast where the symphony of fresh seafood takes center stage. <br>
+            With a menu curated to celebrate the bounty of the sea, every dish is a flavorful ode to oceanic indulgence.
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </main>
   <footer class="page-footer" id="footer">
     <div class="container">
