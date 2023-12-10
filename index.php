@@ -44,7 +44,7 @@ require 'assets/indexheader.inc.php';
 
   <main id="home">
     <h1>We have created our menus with the best selection of the ingredients of our country.</h1>
-    <h2>Here you have some pictures: </h2>
+    <h4>Here you have some pictures: </h4>
     <div class="carousel">
       <a class="carousel-item" href="#one!"><img src="https://media.istockphoto.com/id/1165399909/es/foto/deliciosa-comida-en-un-plato-negro-vista-superior-espacio-de-copia.jpg?s=612x612&w=0&k=20&c=WVPqUu2friqxwlr385Ax-QQ_IvylhR_5wl46P5jQbb4="></a>
       <a class="carousel-item" href="#two!"><img src="https://www.turiweb.pe/wp-content/uploads/2020/01/restaurantes-platos-070120-1.jpg"></a>
@@ -54,7 +54,7 @@ require 'assets/indexheader.inc.php';
     </div>
     <div class="information">
       <h5>
-        Here we have some information about the main ingredients we use and the information about our suppliers:
+        Here we have some information about our suppliers:
       </h5>
       <ul class="collapsible popout">
         <li>

@@ -10,14 +10,14 @@ $email = $_COOKIE['Correo'];
 $consulta->bindParam(':correo', $email);
 $consulta->execute();
 while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-    $name = $fila -> Name;
-    $surnames = $fila -> Surnames;
+    $name = $fila->Name;
+    $surnames = $fila->Surnames;
     $email = $_COOKIE['Correo'];
-    $balance = $fila -> Balance;
+    $balance = $fila->Balance;
 }
 
 
-if(isset($_REQUEST['insertmoney'])){
+if (isset($_REQUEST['insertmoney'])) {
 
     $nuevosaldoaactualizado = 0;
     $consultasaldoactualizar = $db->prepare('SELECT Balance FROM USERS WHERE Email = :correo');
@@ -35,6 +35,16 @@ if(isset($_REQUEST['insertmoney'])){
     $actualizarsaldo->execute();
     echo "<script>alert('Balance updated correctly')</script>";
     sleep(1);
+}
+
+if (isset($_REQUEST['id_email'])){
+
+    $id_emailupdate = $_REQUEST['id_email'];
+
+    $actualizaremail = $db->prepare("UPDATE EMAILS SET Email_Status = 1 WHERE ID_EMAIL = :ide");
+    $actualizaremail->bindParam(':ide', $id_emailupdate);
+    $actualizaremail->execute();
+    echo "<script>alert('Balance updated correctly')</script>";
 }
 ?>
 
@@ -90,29 +100,78 @@ if(isset($_REQUEST['insertmoney'])){
         </div>
         <div class="pd" id="divpd">
             <h1>Your personal data</h1>
-            <?php 
+            <?php
             $consulta = $db->prepare('SELECT * FROM USERS WHERE Email = :correo');
             $email = $_COOKIE['Correo'];
             $consulta->bindParam(':correo', $email);
             $consulta->execute();
             while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-                $name = $fila -> Name;
-                $surnames = $fila -> Surnames;
+                $name = $fila->Name;
+                $surnames = $fila->Surnames;
                 $email = $_COOKIE['Correo'];
-                $balance = $fila -> Balance;
+                $balance = $fila->Balance;
             }
             ?>
             <p>Name: <?php echo $name  ?></p>
-            <p>Surnames: <?php echo $surnames?></p>
+            <p>Surnames: <?php echo $surnames ?></p>
             <p>Email: <?php echo $email ?></p>
             <p>Balance: <?php echo $balance ?>€</p>
             <form method="post" action="profile.php">
                 <input hidden name="insertmoney">
-                <input id="money" name="money" type="text" pattern="[\d+]{1,5}" title="Only add numbers" placeholder="Introduce the quantity">
-                <input type="submit" value="Recharge">
-            </form> 
+                <input id="money" name="money" type="text" pattern="[\d+]{1,5}" title="Only add numbers, max 5" placeholder="Introduce the quantity">
+                <input type="submit" value="Recharge" id="recharge" hidden>
+            </form>
         </div>
         <div class="ean none" id="divean">
+            <div class="emails">
+
+                <p style="text-align: center; color: white">Tienes estos correos sin ver: 
+                <?php 
+                $check = $db -> prepare('SELECT COUNT(*) AS Total FROM EMAILS WHERE Email_Status = false AND ID_USER = :idUser');
+                $check->bindParam(':idUser', $_COOKIE['ID_USUARIO']);
+                $check->execute();
+                while ($fila = $check->fetch(PDO::FETCH_OBJ)) {
+                    $number = $fila -> Total;
+                    echo $number;
+                }
+                ?></p>
+                <ul class="collapsible">
+                    <?php
+                    $emails = $db->prepare('SELECT * FROM EMAILS WHERE ID_USER = :idUser');
+                    $emails->bindParam(':idUser', $_COOKIE['ID_USUARIO']);
+                    $emails->execute();
+                    while ($fila = $emails->fetch(PDO::FETCH_OBJ)) {
+                        $id_email = $fila -> ID_EMAIL;
+                        $nameuser = $fila -> Origin_User;
+                        $affair = $fila -> Affair;
+                        $message = $fila -> Message;
+                        if($fila -> Email_Status == 0){
+                            $form = '<form method="post" action="profile.php">
+                            <input hidden vale="'.$id_email.'" name="id_email">
+                            <input type="submit" value="Check">
+                            </form>';
+                        }else {
+                            $form = '';
+                        }
+                        $message_styled = '<p id="emailmessage">'.$message.'</p>';
+                        echo '
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">account_circle</i>From: '.$nameuser.'</div>
+                            <div class="collapsible-body"><span style="color: white">
+                            Subject: '.$affair.'<br><br>
+                            Message: <br><br>
+                            '.$message_styled.'
+                            <br><br>
+                            '.$form.'
+                            </span></div>
+                        </li>
+                        ';
+                    }
+                    ?>
+                </ul>
+
+
+            </div>
 
         </div>
         <div class="fixed-action-btn">

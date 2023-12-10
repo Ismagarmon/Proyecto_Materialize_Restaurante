@@ -8,7 +8,6 @@ main {
     flex: 1 0 auto;
     background-image: url(../img/Food.png);
     background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .a-height {
@@ -158,6 +157,15 @@ div#divean {
     background-color: black;
 }
 
+div#divean {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 90%;
+    background-color: black;
+}
+
 div#divpd h1 {
     text-align: center;
     width: 100%;
@@ -180,7 +188,7 @@ input#money {
     padding-bottom: 1rem;
 }
 
-input[type="submit"] {
+input[value="Recharge"] {
     border: 1px solid purple;
     border-radius: 10px;
     width: 5%;
@@ -189,7 +197,7 @@ input[type="submit"] {
     background-color: black;
 }
 
-input[type="submit"]:active {
+input[value="Recharge"]:active {
     transform: translateY(4px) !important;
 }
 
@@ -204,15 +212,15 @@ main#home h1 {
     width: 90%;
 }
 
-main#home h2 {
-    font-size: large;
-    margin-bottom: 2rem;
+main#home h4 {
+    margin-bottom: 3rem;
 }
 
 .information {
     overflow-y: auto;
     width: 90%;
     margin: 0rem auto;
+    margin-bottom: 3rem;
 }
 
 .information h5 {
@@ -300,4 +308,29 @@ p#fontsize {
         width: 100%;
         margin: 0rem auto;
     }
+}
+
+.emails {
+    width: 60%;
+    margin: 2rem auto;
+}
+
+input[value="Check"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 3rem;
+    color: white;
+    background-color: gray;
+}
+
+input[value="Check"]:active {
+    transform: translateY(4px) !important;
+}
+
+p#emailmessage {
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
